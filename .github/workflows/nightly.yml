@@ -2,7 +2,7 @@ name: Nightly Build
 
 on:
   schedule:
-    - cron: "0 11,12,1 * * *" # Minutes Hours DayOfMonth Month DayOfWeek
+    - cron: "20 * * * *" # Minutes Hours DayOfMonth Month DayOfWeek
 
   workflow_dispatch:
 
