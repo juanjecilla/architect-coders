@@ -54,4 +54,4 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: app/build/outputs/apk/release/architect-coders-unsigned.apk
+          file: ./app/build/outputs/apk/release/architect-coders-unsigned.apk
