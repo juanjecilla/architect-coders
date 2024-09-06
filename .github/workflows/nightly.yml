@@ -24,8 +24,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Update version
-        uses: ChrisMilner/android-version-increment-action@1.0.0
+      - name: Bump version
+        uses: chkfung/android-version-actions@v1.2.2
+        with:
+          gradlePath: app/build.gradle.kts
 
       - name: Assemble APK
         run: ./gradlew assemble
