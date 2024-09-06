@@ -33,3 +33,25 @@ jobs:
       - name: Assemble APK
         run: ./gradlew assemble
 
+      - name: Store APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: architect-coders-unsigned.apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
+
+  distribute:
+    needs: assemble
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: architect-coders-unsigned.apk
+          path: app/build/outputs/apk/release/
+      - name: Setup Firebase
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          groups: testers
+          file: app/build/outputs/apk/release/architect-coders-unsigned.apk

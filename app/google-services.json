@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "816378261405",
+    "project_id": "architect-coders-bbffd",
+    "storage_bucket": "architect-coders-bbffd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816378261405:android:3a6f7ae11bfb0f6d664974",
+        "android_client_info": {
+          "package_name": "io.devexpert.architectcoders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQG5UMW5bk4HQZHpMBZz6MGOe_3e3tZGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
