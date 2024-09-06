@@ -54,10 +54,8 @@ jobs:
         run: ls; echo "HOLA";ls app/build/outputs/apk/release/
       - name: Setup Firebase
         uses: wzieba/Firebase-Distribution-Github-Action@v1
-      - name: Rename artifact
-        run: ls; echo "HOLA";pwd;
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: /home/runner/work/architect-coders/architect-coders/app/build/outputs/apk/release/architect-coders-unsigned.apk
+          file: /home/runner/work/architect-coders/architect-coders/architect-coders-unsigned.apk
