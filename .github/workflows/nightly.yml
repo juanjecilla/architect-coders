@@ -51,7 +51,7 @@ jobs:
           name: architect-coders-unsigned.apk
           path: ./
       - name: Rename artifact
-        run: ls; echo "HOLA";ls app/build/outputs/apk/release/
+        run: ls
       - name: Setup Firebase
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
