@@ -6,6 +6,8 @@ on:
 
   workflow_dispatch:
 
+  push:
+    branches: ["feature/nightly"]
 
 jobs:
   assemble:
@@ -51,11 +53,11 @@ jobs:
           name: architect-coders-unsigned.apk
           path: ./
       - name: Rename artifact
-        run: ls
+        run: ls; pwd
       - name: Setup Firebase
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: /home/runner/work/architect-coders/architect-coders/architect-coders-unsigned.apk
+          file: ./architect-coders-unsigned.apk
