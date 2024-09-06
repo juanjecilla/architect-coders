@@ -38,7 +38,7 @@ jobs:
       - name: Store APK
         uses: actions/upload-artifact@v4
         with:
-          name: architect-coders-unsigned.apk
+          name: APK
           path: app/build/outputs/apk/release/app-release-unsigned.apk
 
   distribute:
@@ -50,7 +50,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: architect-coders-unsigned.apk
+          name: APK
           path: ./
       - name: Rename artifact
         run: ls; pwd
@@ -60,4 +60,4 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: ./architect-coders-unsigned.apk
+          file: /home/runner/work/architect-coders/architect-coders/app-release-unsigned.apk
