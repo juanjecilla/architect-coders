@@ -2,12 +2,9 @@ name: Nightly Build
 
 on:
   schedule:
-    - cron: "45 * * * *" # Minutes Hours DayOfMonth Month DayOfWeek
+    - cron: "0 11,12,1 * * *" # Minutes Hours DayOfMonth Month DayOfWeek
 
   workflow_dispatch:
-
-  push:
-    branches: ["feature/nightly"]
 
 jobs:
   assemble:
