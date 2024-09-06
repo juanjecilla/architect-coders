@@ -6,6 +6,7 @@ plugins {
     id("architectcoders.android.application")
     id("architectcoders.android.application.compose")
     id("architectcoders.di.library.compose")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -60,4 +61,6 @@ dependencies {
     androidTestImplementation(libs.androidx.room.ktx)
     kspAndroidTest(libs.androidx.room.compiler)
     androidTestImplementation(libs.okhttp.mockwebserver)
+
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
 }
