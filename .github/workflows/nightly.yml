@@ -2,7 +2,7 @@ name: Nightly Build
 
 on:
   schedule:
-    - cron: "* 0 * * *" # Minutes Hours DayOfMonth Month DayOfWeek
+    - cron: "45 * * * *" # Minutes Hours DayOfMonth Month DayOfWeek
 
   workflow_dispatch:
 
@@ -57,7 +57,7 @@ jobs:
       - name: Setup Firebase
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
+          appId: ${{ secrets.FIREBASE_APP_ID }}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
           file: /home/runner/work/architect-coders/architect-coders/app-release-unsigned.apk
