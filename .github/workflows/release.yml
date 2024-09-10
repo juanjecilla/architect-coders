@@ -34,6 +34,12 @@ jobs:
       - name: Decode api.properties
         run: base64 --decode api.properties.encoded > api.properties
 
+      - name: Store google-services.json.encoded
+        run: echo ${{ secrets.GOOGLE_SERVICES_JSON }} > google-services.json.encoded
+
+      - name: Decode google-services.json
+        run: base64 --decode google-services.json.encoded > app/google-services.json
+
       - name: Assemble APK
         run: ./gradlew assemble
 
