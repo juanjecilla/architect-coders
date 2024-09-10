@@ -22,7 +22,11 @@ android {
             useSupportLibrary = true
         }
 
-        buildConfigField("String", "TMDB_API_KEY", "\"Dummy\"")
+        val properties = Properties()
+        properties.load(project.rootProject.file("api.properties").readText().byteInputStream())
+
+        val tmdbApiKey = properties.getProperty("TMDB_API_KEY", "")
+        buildConfigField("String", "TMDB_API_KEY", "\"$tmdbApiKey\"")
     }
 
     buildTypes {
